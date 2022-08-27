@@ -1,6 +1,7 @@
 # PROJECT FROM THE PYTHON BIBLE COURSE, Ziyad Yehia: Tic Tac Toe Game, 
 # Student Lukasz
 
+print("\n -----------Tick Tack Toe GaMe------------- \n")
 #Board creating
 board = [" " for i in range(9)]
 
@@ -14,20 +15,27 @@ def print_board():
     print(row2)
     print(row3)
     print()
+    print(board)
+
+print_board()
 
 #Players define and marking choices on the board
+print("enter your nickname!")
+player_number_1 = input("Player number one...")
+player_number_2 = input("Player number two...")
+
 def player_move(icon):
-
+    
     if icon == "X":
-        number = 1
+        player = player_number_1
     elif icon == "O":
-        number = 2
+        player = player_number_2
 
-    print("Your turn player {}".format(number))
+    print("Your turn player {}".format(player))
     
     choice = int(input("enter your move (1-9): ").strip())
     if board[choice - 1] == " ":
-        board[choice -1] = icon
+       board[choice -1] = icon
     else:
         print()
         print("That field is taken!") 
